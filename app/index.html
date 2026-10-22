@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>محطة الطاقة الحيّة — المدرب فهد رفاعي</title>
+<meta name="description" content="شاشة توقف تعليمية: منظومة شمسية هجينة (ألواح + بطارية + شبكة وعداد ثنائي الاتجاه) تتفاعل مع وقت اليوم. من المدرب فهد رفاعي — fahdacademy.org">
+<meta name="theme-color" content="#050b1f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png">
+<link rel="stylesheet" href="saver.css">
+</head>
+<body>
+<div id="es-wrap">
+<div id="es-stage">
+<canvas id="es-canvas" width="1280" height="720"></canvas>
+<div id="es-brand" class="es-abs"><div class="es-name" id="es-name">المدرب فهد رفاعي</div><img id="es-logo" src="assets/logo.png" alt="FAHDACADEMY.ORG"></div>
+<div id="es-clock" class="es-abs"><strong id="es-time"><span id="es-digits" dir="ltr"></span><span id="es-period"></span></strong><p id="es-date"></p><p id="es-hijri"></p><p class="es-sub">رسم توضيحي لمنظومة شمسية هجينة</p></div>
+<div id="es-stats" class="es-abs">
+<div class="es-chip"><div class="es-l">إنتاج الألواح</div><div><span class="es-v" id="es-pv">0.0</span><span class="es-u">kW</span></div></div>
+<div class="es-chip"><div class="es-l">استهلاك البيت</div><div><span class="es-v" id="es-load">0.0</span><span class="es-u">kW</span></div></div>
+<div class="es-chip es-chip-grid"><div class="es-l" id="es-grid-l">الشبكة · لا تبادل</div><div><span class="es-v" id="es-grid">0.0</span><span class="es-u">kW</span></div><div class="es-s" id="es-grid-s"></div></div>
+<div class="es-chip"><div class="es-l">شحن البطارية</div><div><span class="es-v" id="es-soc">0</span><span class="es-u">%</span></div><div class="es-bar"><i id="es-socbar"></i></div></div>
+</div>
+<div id="es-caption" class="es-abs"><div id="es-cap-main"></div><div id="es-cap-tip"></div></div>
+<div id="es-hint" class="es-abs"></div>
+</div>
+<div id="es-blocked" hidden><div><h1>هذه نسخة معدَّلة من العمل</h1><p>حمّل النسخة الأصلية المجانية من <b>fahdacademy.org</b></p></div></div>
+</div>
+<script src="saver.js"></script>
+</body>
+</html>

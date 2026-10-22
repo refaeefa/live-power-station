@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://fahdacademy.org/solar-saver" version="1.0.0" viewmodes="maximized">
+  <tizen:application id="FahdSolr01.SolarSaver" package="FahdSolr01" required_version="5.5" />
+  <content src="index.html" />
+  <icon src="icon.png" />
+  <name xml:lang="ar">محطة الطاقة الحيّة</name>
+  <name>محطة الطاقة الحيّة</name>
+  <author href="https://fahdacademy.org">المدرب فهد رفاعي</author>
+  <description>شاشة توقف تعليمية لمنظومة شمسية هجينة — fahdacademy.org</description>
+  <tizen:profile name="tv-samsung" />
+  <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice" />
+  <tizen:privilege name="http://tizen.org/privilege/tv.window" />
+  <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable" />
+</widget>

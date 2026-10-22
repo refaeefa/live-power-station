@@ -1,0 +1,12 @@
+{
+  "id": "org.fahdacademy.solarsaver",
+  "version": "1.0.0",
+  "vendor": "Fahd Refai - fahdacademy.org",
+  "type": "web",
+  "main": "index.html",
+  "title": "محطة الطاقة الحيّة",
+  "icon": "icon-80.png",
+  "largeIcon": "icon-130.png",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true
+}
