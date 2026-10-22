@@ -29,7 +29,7 @@
 ملاحظة: شاشات TCL المبنية على Roku وشاشات Fire TV وVizio غير مدعومة بالتثبيت المباشر، وسيعرض عليك المساعد فتحها من المتصفح كبديل.
 
 
-التثبيت اليدوي بالصور: [guide/FahdSolarSaver-Guide-AR.pdf](guide/FahdSolarSaver-Guide-AR.pdf)
+دليل مصوّر بالعربي (المزايا واللقطات وما يحدث على كل شاشة): [guide/FahdSolarSaver-Guide-AR.pdf](guide/FahdSolarSaver-Guide-AR.pdf)
 
 ---
 
