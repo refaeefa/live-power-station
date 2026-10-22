@@ -142,22 +142,23 @@ Optional (ask first): suggest disabling Samsung's own ambient/screensaver timeou
 
 ## 7. PATH A — Android TV / Google TV (TCL, Sony, Xiaomi, Hisense, Philips…)
 
-### A1. Is there an APK?
-Look for `*.apk` in the package or one the author published. If none, you will **build a debug APK** from `android-project/` (A2).
-A debug-signed APK is fine for sideloading; do not publish it.
+### A1. Get the ready-made APK (no building needed)
+The repository publishes a ready APK automatically (built by GitHub Actions). Download it yourself — the user does nothing:
+```sh
+curl -L -o FahdSolarSaver.apk https://github.com/refaeefa/live-power-station/releases/download/apk-latest/FahdSolarSaver.apk
+# Windows PowerShell: Invoke-WebRequest -Uri <same URL> -OutFile FahdSolarSaver.apk
+```
+Tell the user in one line what you downloaded and from where, then continue to A3. Only if this download fails (404 / no network), build it yourself (A2).
 
-### A2. Build the APK (Mode A; ask permission, this installs developer tools)
-Needs: JDK 17 (e.g. Temurin from `adoptium.net`), Android command-line tools (`developer.android.com/studio#command-line-tools-only`),
-then:
+### A2. Fallback only: build the APK
+Needs: JDK 17 (e.g. Temurin from `adoptium.net`), Android command-line tools (`developer.android.com/studio#command-line-tools-only`) — ask permission first, this installs developer tools:
 ```sh
 sdkmanager "platforms;android-34" "build-tools;34.0.0"      # the user must consent to Google's SDK licenses
 cd android-project
-gradle wrapper --gradle-version 8.7                           # or open the folder in Android Studio and Build → Build APK(s)
-./gradlew assembleDebug                                        # Windows: gradlew.bat assembleDebug
+gradle assembleDebug                                          # needs Gradle 8.7, or open the folder in Android Studio → Build APK(s)
 # result: app/build/outputs/apk/debug/app-debug.apk
 ```
-If Gradle/AGP versions complain, adjust the versions in `android-project/build.gradle` and `settings.gradle` minimally (this folder is not part of the on-screen app).
-This project was written carefully but **not yet compiled by the author**; if it fails, fix build config only (never the web files in `assets/`), or use §9.
+If Gradle/AGP versions complain, adjust only `android-project/build.gradle` and `settings.gradle` (never the web files in `assets/`), or use §9.
 
 ### A3. [USER] Allow debugging on the TV
 1. *Settings → Device Preferences → About* → tap **Build** 7 times ("You are a developer").
@@ -168,7 +169,7 @@ This project was written carefully but **not yet compiled by the author**; if it
 ```sh
 adb connect TV_IP:5555        # for "Wireless debugging" with pairing code: adb pair TV_IP:PAIR_PORT, then adb connect TV_IP:PORT
 adb devices
-adb install -r path/to/app-debug.apk
+adb install -r FahdSolarSaver.apk
 adb shell monkey -p org.fahdacademy.solarsaver -c android.intent.category.LEANBACK_LAUNCHER 1     # launches it
 ```
 No `adb`? install Android *platform-tools* from `developer.android.com/tools/releases/platform-tools` (ask first).
