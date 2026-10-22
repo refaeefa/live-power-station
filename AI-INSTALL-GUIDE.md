@@ -23,7 +23,6 @@ driven by the device clock). It is a static web app (`app/index.html`, ES5, no n
 | Folder | Purpose |
 |---|---|
 | `app/` | The web app. It is **also** a ready Tizen (Samsung) project (`config.xml`) and webOS (LG) project (`appinfo.json`). |
-| `pc/` | One-click launchers: `Mac-Open.command`, `Windows-Open.bat`. |
 | `android-project/` | Android Studio/Gradle project (WebView wrapper + optional Daydream screensaver service). |
 | `guide/` | Human PDF (features and screenshots). Not needed for installation. |
 
@@ -50,13 +49,13 @@ driven by the device clock). It is a static web app (`app/index.html`, ES5, no n
 ## 3. First message to the user (Arabic suggestion)
 
 > أهلًا! أنا بمشي معك خطوة خطوة لتثبيت «محطة الطاقة الحيّة» وما تحتاج تنزّل شيئًا بنفسك. سؤال واحد بس: وين تبغى تشغّلها؟
-> ١) شاشة سامسونج ٢) شاشة أندرويد/جوجل TV (مثل TCL وسوني وشاومي) ٣) شاشة LG ٤) كمبيوتر ماك أو ويندوز ٥) غير ذلك / ما أدري
+> ١) شاشة سامسونج ٢) شاشة أندرويد/جوجل TV (مثل TCL وسوني وشاومي) ٣) شاشة LG ٤) غير ذلك / ما أدري
 
 If they don't know the TV type: Samsung = Tizen, remote has a Samsung/Smart Hub button, logo "SAMSUNG" ·
 LG = webOS (magic remote with pointer) · TCL/Sony/Xiaomi/Hisense = usually **Android TV / Google TV** (check *Settings → About*),
-but **TCL Roku TV / Fire TV / Vizio** are not supported by this package: offer §9 (browser) or casting from a computer.
+but **TCL Roku TV / Fire TV / Vizio** are not supported by this package: offer §9 (the TV's own web browser).
 
-Then confirm: the computer (Mac/Windows) and the TV are on the **same Wi‑Fi/router**.
+Then confirm: the computer you (the agent) run on and the TV are on the **same Wi‑Fi/router**. (The computer is only the installer's workstation — the screensaver itself is for TVs only.)
 
 ## 4. Verify the package (only if it came as a ZIP/offline copy and `SHA256SUMS.txt` exists)
 
@@ -67,16 +66,6 @@ shasum -a 256 -c SHA256SUMS.txt
 Get-FileHash app\saver.js -Algorithm SHA256
 ```
 If a file mismatches, tell the user the package was changed or corrupted and ask them to download it again from fahdacademy.org.
-
----
-
-## 5. PATH P — Mac or Windows computer (easiest, ~1 minute)
-
-1. macOS: `bash pc/Mac-Open.command` (it opens Chrome/Edge/Brave full-screen; Cmd+Q exits). Windows: `cmd /c pc\Windows-Open.bat` (Alt+F4 exits).
-2. If macOS blocks the file: `chmod +x pc/Mac-Open.command` then retry; if Gatekeeper complains, tell the user: right-click → Open → Open.
-3. No Chromium browser? Open `app/index.html` in any modern browser and tell the user to press **F** (or click) for full-screen.
-4. Ask the user to confirm they see the sun/moon scene with a clock. Done.
-5. Optional (ask first): make a desktop shortcut that runs the same launcher.
 
 ---
 
@@ -204,10 +193,10 @@ Ask them to open it from the apps row ("محطة الطاقة الحيّة") and
 
 ---
 
-## 9. Fallback for any device — open it in a browser (no install)
+## 9. Fallback for TVs — the TV's own browser (no install)
 
-Open `app/index.html` (or the author's hosted page if the user has one) in the device's browser and make it full-screen (press **F** or click).
-Works on any modern browser, including TV browsers (Puffin TV, TV Bro) and tablets.
+If nothing else works, the user can open the hosted page in the **TV's web browser** (e.g. Puffin TV, TV Bro, Samsung Internet, LG Web Browser) and make it full-screen (press **F** or click).
+This project is meant for TV screens only; do not offer desktop/laptop installs.
 
 ---
 
